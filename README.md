@@ -8,6 +8,6 @@
 With braidy belts, you can now braid with same speed underground belts.
 Braidy belts are clones of underground belts. Simply alternate between pairs of vanilla "undergroundies" and braidy belts.
 
-### Compatibility
+### Support for:
 
 [Krastorio2](https://mods.factorio.com/mod/Krastorio2)  
