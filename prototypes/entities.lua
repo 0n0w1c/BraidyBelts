@@ -8,7 +8,7 @@ data:extend { braidy_belt }
 local fast_braidy_belt = table.deepcopy(data.raw["underground-belt"]["fast-underground-belt"])
 fast_braidy_belt.name = "fast-braidy-belt"
 fast_braidy_belt.minable.result = "fast-braidy-belt"
-fast_braidy_belt.next_upgrade = "express-brady-belt"
+fast_braidy_belt.next_upgrade = "express-braidy-belt"
 fast_braidy_belt.order = data.raw["item"]["fast-underground-belt"].order .. "z"
 data:extend { fast_braidy_belt }
 
