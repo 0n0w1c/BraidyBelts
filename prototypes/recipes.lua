@@ -24,7 +24,3 @@ if mods["Krastorio2"] then
     superior_braidy_belt.result = "superior-braidy-belt"
     data:extend { superior_braidy_belt }
 end
-
--- braidy_belt.enabled = false
--- fast_braidy_belt.enabled = false
--- express_braidy_belt.enabled = false
