@@ -1,6 +1,7 @@
 # BraidyBelts
  
-![Braidy belts](/braiding.png)(/crafting.png)
+![Braidy belts](/braiding.png)
+(/crafting.png)
 
 ## Braidy belts - Clones the underground belts, useful for belt braiding and weaving.
 
