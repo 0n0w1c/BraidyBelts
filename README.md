@@ -1,7 +1,7 @@
 # BraidyBelts
  
 ![Braidy belts](/braiding.png)
-[Crafting](/crafting.png)
+![Crafting](/crafting.png)
 
 ## Braidy belts - Clones the underground belts, useful for belt braiding.
 
