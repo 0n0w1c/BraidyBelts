@@ -26,6 +26,6 @@ if mods["Krastorio2"] then
     local superior_braidy_belt = table.deepcopy(data.raw["item"]["kr-superior-underground-belt"])
     superior_braidy_belt.name = "superior-braidy-belt"
     superior_braidy_belt.place_result = "superior-braidy-belt"
-    superior_braidy_belt.order = data.raw["item"]["superior-underground-belt"].order .. "z"
+    superior_braidy_belt.order = data.raw["item"]["kr-superior-underground-belt"].order .. "z"
     data:extend { superior_braidy_belt }
 end
