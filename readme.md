@@ -6,7 +6,7 @@
 ## Braidy belts - Clones of the underground belts, useful for belt braiding.
 
 With braidy belts, you can now braid with same speed underground belts.
-Braidy belts are clones of underground belts. Simply alternate between pairs of vanilla "undergroundies" and braidy belts.
+Simply alternate between pairs of vanilla "undergroundies" and braidy belts.
 
 ### Support for:
 
