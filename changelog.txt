@@ -5,7 +5,6 @@ Date: 13. 06. 2024
     - None
   Fixes:
     - Now properly configured for Upgrade planner
-
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 13. 06. 2024
