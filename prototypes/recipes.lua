@@ -24,3 +24,24 @@ if mods["Krastorio2"] then
     superior_braidy_belt.result = "superior-braidy-belt"
     data:extend { superior_braidy_belt }
 end
+
+if mods["aai-industry"] then
+    if braidy_belt.expensive then
+        braidy_belt.expensive.results = {
+            {
+                amount = 2,
+                name = "braidy-belt",
+                type = "item"
+            }
+        }
+    end
+    if braidy_belt.normal then
+        braidy_belt.normal.results = {
+            {
+                amount = 2,
+                name = "braidy-belt",
+                type = "item"
+            }
+        }
+    end
+end
