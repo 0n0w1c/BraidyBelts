@@ -6,7 +6,7 @@ if mods["aai-industry"] then
     if braidy_belt.expensive then
         for _, result in pairs(braidy_belt.expensive.results) do
             if result.name then
-                result.name = "braidy_belt"
+                result.name = "braidy-belt"
             end
         end
     end
@@ -14,7 +14,7 @@ if mods["aai-industry"] then
     if braidy_belt.normal then
         for _, result in pairs(braidy_belt.normal.results) do
             if result.name then
-                result.name = "braidy_belt"
+                result.name = "braidy-belt"
             end
         end
     end
