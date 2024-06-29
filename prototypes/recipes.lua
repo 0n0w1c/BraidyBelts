@@ -4,22 +4,19 @@ braidy_belt.result = "braidy-belt"
 
 if mods["aai-industry"] then
     if braidy_belt.expensive then
-        braidy_belt.expensive.results = {
-            {
-                amount = 2,
-                name = "braidy-belt",
-                type = "item"
-            }
-        }
+        for _, result in pairs(braidy_belt.expensive.results) do
+            if result.name then
+                result.name = "braidy_belt"
+            end
+        end
     end
+
     if braidy_belt.normal then
-        braidy_belt.normal.results = {
-            {
-                amount = 2,
-                name = "braidy-belt",
-                type = "item"
-            }
-        }
+        for _, result in pairs(braidy_belt.normal.results) do
+            if result.name then
+                result.name = "braidy_belt"
+            end
+        end
     end
 end
 
