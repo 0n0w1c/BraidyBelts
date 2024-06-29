@@ -34,4 +34,28 @@ if mods["Krastorio2"] then
     data:extend { advanced_braidy_belt, superior_braidy_belt }
 end
 
+if mods["AdvancedBelts"] then
+    express_braidy_belt.next_upgrade = "extreme-braidy-belt"
+
+    local extreme_braidy_belt = table.deepcopy(data.raw["underground-belt"]["extreme-underground"])
+    extreme_braidy_belt.name = "extreme-braidy-belt"
+    extreme_braidy_belt.minable.result = "extreme-braidy-belt"
+    extreme_braidy_belt.next_upgrade = "ultimate-braidy-belt"
+    extreme_braidy_belt.order = data.raw["item"]["extreme-underground"].order .. "z"
+
+    local ultimate_braidy_belt = table.deepcopy(data.raw["underground-belt"]["ultimate-underground"])
+    ultimate_braidy_belt.name = "ultimate-braidy-belt"
+    ultimate_braidy_belt.minable.result = "ultimate-braidy-belt"
+    ultimate_braidy_belt.next_upgrade = "high-speed-braidy-belt"
+    ultimate_braidy_belt.order = data.raw["item"]["ultimate-underground"].order .. "z"
+
+    local high_speed_braidy_belt = table.deepcopy(data.raw["underground-belt"]["high-speed-underground"])
+    high_speed_braidy_belt.name = "high-speed-braidy-belt"
+    high_speed_braidy_belt.minable.result = "high-speed-braidy-belt"
+    high_speed_braidy_belt.next_upgrade = nil
+    high_speed_braidy_belt.order = data.raw["item"]["high-speed-underground"].order .. "z"
+
+   data:extend { extreme_braidy_belt, ultimate_braidy_belt, high_speed_braidy_belt }
+end
+
 data:extend { braidy_belt, fast_braidy_belt, express_braidy_belt }

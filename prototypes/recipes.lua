@@ -41,3 +41,19 @@ if mods["Krastorio2"] then
 
     data:extend { advanced_braidy_belt, superior_braidy_belt }
 end
+
+if mods["AdvancedBelts"] then
+    local extreme_braidy_belt = table.deepcopy(data.raw["recipe"]["extreme-underground"])
+    extreme_braidy_belt.name = "extreme-braidy-belt"
+    extreme_braidy_belt.result = "extreme-braidy-belt"
+
+    local ultimate_braidy_belt = table.deepcopy(data.raw["recipe"]["ultimate-underground"])
+    ultimate_braidy_belt.name = "ultimate-braidy-belt"
+    ultimate_braidy_belt.result = "ultimate-braidy-belt"
+
+    local high_speed_braidy_belt = table.deepcopy(data.raw["recipe"]["high-speed-underground"])
+    high_speed_braidy_belt.name = "high-speed-braidy-belt"
+    high_speed_braidy_belt.result = "high-speed-braidy-belt"
+
+   data:extend { extreme_braidy_belt, ultimate_braidy_belt, high_speed_braidy_belt }
+end
