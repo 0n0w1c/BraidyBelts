@@ -31,7 +31,7 @@ if mods["Krastorio2"] then
     superior_braidy_belt.next_upgrade = nil
     superior_braidy_belt.order = data.raw["item"]["kr-superior-underground-belt"].order .. "z"
 
-    data:extend { advanced_braidy_belt, superior_braidy_belt }
+    data:extend {advanced_braidy_belt, superior_braidy_belt}
 end
 
 if mods["AdvancedBelts"] then
@@ -55,7 +55,7 @@ if mods["AdvancedBelts"] then
     high_speed_braidy_belt.next_upgrade = nil
     high_speed_braidy_belt.order = data.raw["item"]["high-speed-underground"].order .. "z"
 
-   data:extend { extreme_braidy_belt, ultimate_braidy_belt, high_speed_braidy_belt }
+    data:extend {extreme_braidy_belt, ultimate_braidy_belt, high_speed_braidy_belt}
 end
 
-data:extend { braidy_belt, fast_braidy_belt, express_braidy_belt }
+data:extend {braidy_belt, fast_braidy_belt, express_braidy_belt}
