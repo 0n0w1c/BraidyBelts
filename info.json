@@ -12,6 +12,6 @@
 		"? aai-industry >= 0.5.22"
 	],
     "package":{
-        "ignore":[ ".DS_Store", "*.zip" ]
+        "ignore":[".DS_Store", "*.zip"]
     }
 }

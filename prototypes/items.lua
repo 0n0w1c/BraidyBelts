@@ -13,7 +13,7 @@ express_braidy_belt.name = "express-braidy-belt"
 express_braidy_belt.place_result = "express-braidy-belt"
 express_braidy_belt.order = data.raw["item"]["express-underground-belt"].order .. "z"
 
-data:extend { braidy_belt, fast_braidy_belt, express_braidy_belt }
+data:extend {braidy_belt, fast_braidy_belt, express_braidy_belt}
 
 if mods["Krastorio2"] then
     local advanced_braidy_belt = table.deepcopy(data.raw["item"]["kr-advanced-underground-belt"])
@@ -26,7 +26,7 @@ if mods["Krastorio2"] then
     superior_braidy_belt.place_result = "superior-braidy-belt"
     superior_braidy_belt.order = data.raw["item"]["kr-superior-underground-belt"].order .. "z"
 
-    data:extend { advanced_braidy_belt, superior_braidy_belt }
+    data:extend {advanced_braidy_belt, superior_braidy_belt}
 end
 
 if mods["AdvancedBelts"] then
@@ -45,5 +45,5 @@ if mods["AdvancedBelts"] then
     high_speed_braidy_belt.place_result = "high-speed-braidy-belt"
     high_speed_braidy_belt.order = data.raw["item"]["high-speed-underground"].order .. "z"
 
-   data:extend { extreme_braidy_belt, ultimate_braidy_belt, high_speed_braidy_belt }
+    data:extend {extreme_braidy_belt, ultimate_braidy_belt, high_speed_braidy_belt}
 end

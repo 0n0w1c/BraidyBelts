@@ -2,7 +2,7 @@ local braidy_belt = table.deepcopy(data.raw["recipe"]["underground-belt"])
 braidy_belt.name = "braidy-belt"
 braidy_belt.result = "braidy-belt"
 if settings.startup["bb-recipe-type"].value == "conversion" then
-    braidy_belt.ingredients = {{ "underground-belt", 2 }}
+    braidy_belt.ingredients = {{"underground-belt", 2}}
 end
 
 if mods["aai-industry"] then
@@ -13,7 +13,7 @@ if mods["aai-industry"] then
             end
         end
         if settings.startup["bb-recipe-type"].value == "conversion" then
-            braidy_belt.expensive.ingredients = {{ "underground-belt", 2 }}
+            braidy_belt.expensive.ingredients = {{"underground-belt", 2}}
         end
     end
 
@@ -24,7 +24,7 @@ if mods["aai-industry"] then
             end
         end
         if settings.startup["bb-recipe-type"].value == "conversion" then
-            braidy_belt.normal.ingredients = {{ "underground-belt", 2 }}
+            braidy_belt.normal.ingredients = {{"underground-belt", 2}}
         end
     end
 end
