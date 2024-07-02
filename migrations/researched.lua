@@ -2,8 +2,8 @@ for index, force in pairs(game.forces) do
     local technologies = force.technologies
     local recipes = force.recipes
 
-    if recipes["braidy-belt"] and technologies["basic-logistics"] then
-        recipes["braidy-belt"].enabled = technologies["basic-logistics"].researched
+    if recipes["braidy-belt"] and technologies["logistics"] then
+        recipes["braidy-belt"].enabled = technologies["logistics"].researched
     end
 
     if recipes["fast-braidy-belt"] and technologies["logistics-2"] then

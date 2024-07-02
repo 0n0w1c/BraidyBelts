@@ -1,8 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
-Date: 01. 07. 2024
+Date: 02. 07. 2024
   Changes:
     - Added a migration script
+    - Added startup setting to select recipe type (normal or conversion)
   Fixes:
     - None
 ---------------------------------------------------------------------------------------------------
