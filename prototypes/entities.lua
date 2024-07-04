@@ -1,32 +1,22 @@
-local braidy_belt = table.deepcopy(data.raw["underground-belt"]["underground-belt"])
-braidy_belt.name = "braidy-belt"
-braidy_belt.minable.result = "braidy-belt"
-braidy_belt.next_upgrade = "fast-braidy-belt"
+local function clone_underground_belt(clone_name, original, upgrade)
+    local clone = table.deepcopy(data.raw["underground-belt"][original])
+    clone.name = clone_name
+    clone.minable.result = clone_name
+    clone.next_upgrade = upgrade
+    return clone
+end
 
-local fast_braidy_belt = table.deepcopy(data.raw["underground-belt"]["fast-underground-belt"])
-fast_braidy_belt.name = "fast-braidy-belt"
-fast_braidy_belt.minable.result = "fast-braidy-belt"
-fast_braidy_belt.next_upgrade = "express-braidy-belt"
-
-local express_braidy_belt = table.deepcopy(data.raw["underground-belt"]["express-underground-belt"])
-express_braidy_belt.name = "express-braidy-belt"
-express_braidy_belt.minable.result = "express-braidy-belt"
-express_braidy_belt.next_upgrade = nil
+local braidy_belt = clone_underground_belt("braidy-belt", "underground-belt", "fast-braidy-belt")
+local fast_braidy_belt = clone_underground_belt("fast-braidy-belt", "fast-underground-belt", "express-braidy-belt")
+local express_braidy_belt = clone_underground_belt("express-braidy-belt", "express-underground-belt", nil)
 
 data:extend {braidy_belt, fast_braidy_belt, express_braidy_belt}
 
 if mods["Krastorio2"] then
     data.raw["underground-belt"]["express-braidy-belt"].next_upgrade = "advanced-braidy-belt"
 
-    local advanced_braidy_belt = table.deepcopy(data.raw["underground-belt"]["kr-advanced-underground-belt"])
-    advanced_braidy_belt.name = "advanced-braidy-belt"
-    advanced_braidy_belt.minable.result = "advanced-braidy-belt"
-    advanced_braidy_belt.next_upgrade = "superior-braidy-belt"
-
-    local superior_braidy_belt = table.deepcopy(data.raw["underground-belt"]["kr-superior-underground-belt"])
-    superior_braidy_belt.name = "superior-braidy-belt"
-    superior_braidy_belt.minable.result = "superior-braidy-belt"
-    superior_braidy_belt.next_upgrade = nil
+    local advanced_braidy_belt = clone_underground_belt("advanced-braidy-belt", "kr-advanced-underground-belt", "superior-braidy-belt")
+    local superior_braidy_belt = clone_underground_belt("superior-braidy-belt", "kr-superior-underground-belt", nil)
 
     data:extend {advanced_braidy_belt, superior_braidy_belt}
 end
@@ -34,20 +24,9 @@ end
 if mods["AdvancedBelts"] then
     data.raw["underground-belt"]["express-braidy-belt"].next_upgrade = "extreme-braidy-belt"
 
-    local extreme_braidy_belt = table.deepcopy(data.raw["underground-belt"]["extreme-underground"])
-    extreme_braidy_belt.name = "extreme-braidy-belt"
-    extreme_braidy_belt.minable.result = "extreme-braidy-belt"
-    extreme_braidy_belt.next_upgrade = "ultimate-braidy-belt"
-
-    local ultimate_braidy_belt = table.deepcopy(data.raw["underground-belt"]["ultimate-underground"])
-    ultimate_braidy_belt.name = "ultimate-braidy-belt"
-    ultimate_braidy_belt.minable.result = "ultimate-braidy-belt"
-    ultimate_braidy_belt.next_upgrade = "high-speed-braidy-belt"
-
-    local high_speed_braidy_belt = table.deepcopy(data.raw["underground-belt"]["high-speed-underground"])
-    high_speed_braidy_belt.name = "high-speed-braidy-belt"
-    high_speed_braidy_belt.minable.result = "high-speed-braidy-belt"
-    high_speed_braidy_belt.next_upgrade = nil
+    local extreme_braidy_belt = clone_underground_belt("extreme-braidy-belt", "extreme-underground", "ultimate-braidy-belt")
+    local ultimate_braidy_belt = clone_underground_belt("ultimate-braidy-belt", "ultimate-underground", "high-speed-braidy-belt")
+    local high_speed_braidy_belt = clone_underground_belt("high-speed-braidy-belt", "high-speed-underground", nil)
 
     data:extend {extreme_braidy_belt, ultimate_braidy_belt, high_speed_braidy_belt}
 end
