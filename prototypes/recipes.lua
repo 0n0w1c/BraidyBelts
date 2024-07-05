@@ -1,19 +1,14 @@
 local conversion_recipe = (settings.startup["bb-recipe-type"].value == "conversion")
 
-local function adjust_recipe(recipe, ingredient)
-    if conversion_recipe then
-        recipe.ingredients = {{ingredient, 2}}
+-- expensive mode should be deprecated in 2.0
+local function expensive_mode(recipe, ingredient)
+    for _, result in pairs(recipe.expensive.results) do
+        if result.name then
+            result.name = recipe.name
+        end
     end
-
-    if recipe.expensive then
-        for _, result in pairs(recipe.expensive.results) do
-            if result.name then
-                result.name = recipe.name
-            end
-        end
-        if conversion_recipe then
-            recipe.expensive.ingredients = {{ingredient, 2}}
-        end
+    if conversion_recipe then
+        recipe.expensive.ingredients = {{ingredient, 2}}
     end
 
     if recipe.normal then
@@ -32,7 +27,12 @@ local function clone_recipe(clone_name, original)
     local clone = table.deepcopy(data.raw["recipe"][original])
     clone.name = clone_name
     clone.result = clone_name
-    adjust_recipe(clone, original)
+    if conversion_recipe then
+        clone.ingredients = {{original, 2}}
+    end
+    if clone.expensive then
+        expensive_mode(clone, original)
+    end
     return clone
 end
 
