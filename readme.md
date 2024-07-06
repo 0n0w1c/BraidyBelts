@@ -14,6 +14,5 @@ Vanilla recipe or direct conversion of underground belts to braidy belts (defaul
 #### Support for:
 
 [Krastorio 2](https://mods.factorio.com/mod/Krastorio2)  
-[AAI Industry](https://mods.factorio.com/mod/aai-industry)  
 [AdvancedBelts](https://mods.factorio.com/mod/AdvancedBelts)  
 [Space Exploration](https://mods.factorio.com/mod/space-exploration)  
