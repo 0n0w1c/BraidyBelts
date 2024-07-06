@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.3
+Date: 06. 07. 2024
+  Changes:
+    - Added startup setting to select the belt type to be returned to inventory, when mined
+  Fixes:
+    - None
+---------------------------------------------------------------------------------------------------
 Version: 1.2.2
 Date: 06. 07. 2024
   Changes:

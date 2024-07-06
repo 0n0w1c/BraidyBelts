@@ -1,8 +1,14 @@
+local mine_braidy_belt = (settings.startup["bb-mine-type"].value == "braidy belt")
+
 local function clone_underground_belt(clone_name, original, upgrade)
     local clone = table.deepcopy(data.raw["underground-belt"][original])
     clone.name = clone_name
-    clone.minable.result = clone_name
     clone.next_upgrade = upgrade
+    if mine_braidy_belt then
+        clone.minable.result = clone_name
+    else
+        clone.minable.result = original
+    end
     return clone
 end
 
