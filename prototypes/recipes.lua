@@ -18,8 +18,10 @@ local function swap_ingredient(recipe)
             if equivalents[ingredient.name] then
                 ingredient.name = equivalents[ingredient.name]
             end
-        elseif equivalents[ingredient[1]] then
-            ingredient[1] = equivalents[ingredient[1]]
+        else
+            if equivalents[ingredient[1]] then
+                ingredient[1] = equivalents[ingredient[1]]
+            end
         end
     end
 end
