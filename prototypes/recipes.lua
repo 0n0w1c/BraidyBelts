@@ -1,5 +1,13 @@
 local conversion_recipe = (settings.startup["bb-recipe-type"].value == "conversion")
 
+local function set_conversion(xrecipe, ingredient)
+    xrecipe.ingredients = {{ingredient, 2}}
+    xrecipe.category = nil
+    xrecipe.always_show_made_in = false
+    xrecipe.result_count = 2
+    xrecipe.energy_required = 0.5
+ end
+
 -- expensive mode should be deprecated in 2.0
 local function expensive_mode(recipe, ingredient)
     for _, result in pairs(recipe.expensive.results) do
@@ -8,6 +16,7 @@ local function expensive_mode(recipe, ingredient)
         end
     end
     if conversion_recipe then
+--        set_conversion(recipe.expensive, original)
         recipe.expensive.ingredients = {{ingredient, 2}}
         recipe.expensive.category = nil
         recipe.expensive.always_show_made_in = false
@@ -22,6 +31,7 @@ local function expensive_mode(recipe, ingredient)
             end
         end
         if conversion_recipe then
+--            set_conversion(recipe.normal, original)
             recipe.normal.ingredients = {{ingredient, 2}}
             recipe.normal.category = nil
             recipe.normal.always_show_made_in = false
@@ -36,6 +46,7 @@ local function clone_recipe(clone_name, original)
     clone.name = clone_name
     clone.result = clone_name
     if conversion_recipe then
+--        set_conversion(clone, original)
         clone.ingredients = {{original, 2}}
         clone.category = nil
         clone.always_show_made_in = false
