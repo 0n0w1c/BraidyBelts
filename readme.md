@@ -16,6 +16,6 @@ Vanilla/modded or Braidy belt, use of vanilla/modded can be a good option with t
 
 #### Support for:  
 
-[Krastorio 2](https://mods.factorio.com/mod/Krastorio2)  
 [AdvancedBelts](https://mods.factorio.com/mod/AdvancedBelts)  
+[Krastorio 2](https://mods.factorio.com/mod/Krastorio2)  
 [Space Exploration](https://mods.factorio.com/mod/space-exploration)  
