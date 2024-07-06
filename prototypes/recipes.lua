@@ -62,15 +62,14 @@ local function clone_recipe(clone_name, original)
     local clone = table.deepcopy(data.raw["recipe"][original])
     clone.name = clone_name
     clone.result = clone_name
-    if conversion_recipe then
-        set_conversion(clone, original)
-    else
-        if clone.ingredients then
-            swap_ingredient(clone)
-        end
-    end
     if clone.expensive then
         expensive_mode(clone, original)
+    else
+        if conversion_recipe then
+            set_conversion(clone, original)
+        else
+            swap_ingredient(clone)
+        end
     end
     return clone
 end
