@@ -32,7 +32,7 @@ local function set_conversion(recipe, ingredient)
     recipe.energy_required = 0.5
 end
 
-local function set_results(recipe, mode)
+local function set_result(recipe, mode)
     for _, result in pairs(recipe[mode].results) do
         if result.name then
             result.name = recipe.name
@@ -41,7 +41,7 @@ local function set_results(recipe, mode)
 end
 
 local function expensive_mode(recipe, ingredient)
-    set_results(recipe, "expensive")
+    set_result(recipe, "expensive")
     if conversion_recipe then
         set_conversion(recipe.expensive, ingredient)
     else
@@ -49,7 +49,7 @@ local function expensive_mode(recipe, ingredient)
     end
 
     if recipe.normal then
-        set_results(recipe, "normal")
+        set_result(recipe, "normal")
         if conversion_recipe then
             set_conversion(recipe.normal, ingredient)
         else
