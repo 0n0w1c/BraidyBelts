@@ -26,3 +26,9 @@ if mods["AdvancedBelts"] then
 
     data:extend {extreme_braidy_belt, ultimate_braidy_belt, high_speed_braidy_belt}
 end
+
+if mods["space-exploration"] then
+    local space_braidy_belt = clone_item("space-braidy-belt", "se-space-underground-belt")
+
+    data:extend {space_braidy_belt}
+end
