@@ -32,39 +32,34 @@ local function set_conversion(recipe, ingredient)
     recipe.energy_required = 0.5
 end
 
-local function set_result(recipe, mode)
-    for _, result in pairs(recipe[mode].results) do
+local function set_result(recipe, name)
+    for _, result in pairs(recipe.results) do
         if result.name then
-            result.name = recipe.name
+            result.name = name
         end
     end
 end
 
-local function expensive_mode(recipe, ingredient)
-    set_result(recipe, "expensive")
+local function set_recipe(recipe, ingredient)
     if conversion_recipe then
-        set_conversion(recipe.expensive, ingredient)
+        set_conversion(recipe, ingredient)
     else
-        swap_ingredient(recipe.expensive)
-    end
-
-    if recipe.normal then
-        set_result(recipe, "normal")
-        if conversion_recipe then
-            set_conversion(recipe.normal, ingredient)
-        else
-            swap_ingredient(recipe.normal)
-        end
+        swap_ingredient(recipe)
     end
 end
 
 local function clone_recipe(clone_name, original)
     local clone = table.deepcopy(data.raw["recipe"][original])
     clone.name = clone_name
-    clone.result = clone_name
     if clone.expensive then
-        expensive_mode(clone, original)
+        set_recipe(clone.expensive, original)
+        set_result(clone.expensive, clone_name)
+        if clone.normal then
+            set_recipe(clone.normal, original)
+            set_result(clone.normal, clone_name)
+        end
     else
+        clone.result = clone_name
         if conversion_recipe then
             set_conversion(clone, original)
         else
