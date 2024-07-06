@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: 06. 07. 2024
+  Changes:
+    - All conversion recipes can now be handcrafted
+    - All conversion recipes set to 0.5s crafting time
+  Fixes:
+    - Space brady conversion recipe now produces 2 belts
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 05. 07. 2024
   Changes:
