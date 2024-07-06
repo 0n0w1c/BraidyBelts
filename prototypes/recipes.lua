@@ -1,42 +1,59 @@
 local conversion_recipe = (settings.startup["bb-recipe-type"].value == "conversion")
 
-local function set_conversion(xrecipe, ingredient)
-    xrecipe.ingredients = {{ingredient, 2}}
-    xrecipe.category = nil
-    xrecipe.always_show_made_in = false
-    xrecipe.result_count = 2
-    xrecipe.energy_required = 0.5
- end
+local equivalents = {
+    ["underground-belt"] = "braidy-belt",
+    ["fast-underground-belt"] = "fast-braidy-belt",
+    ["express-underground-belt"] = "express-braidy-belt",
+    ["kr-advanced-underground-belt"] = "advanced-braidy-belt",
+    ["kr-superior-underground-belt"] = "superior-braidy-belt",
+    ["extreme-underground"] = "extreme-braidy-belt",
+    ["ultimate-underground"] = "ultimate-braidy-belt",
+    ["high-speed-underground"] = "high-speed-braidy-belt",
+    ["se-space-underground-belt"] = "space-braidy-belt"
+}
 
--- expensive mode should be deprecated in 2.0
-local function expensive_mode(recipe, ingredient)
-    for _, result in pairs(recipe.expensive.results) do
+local function swap_ingredient(recipe)
+    for _, ingredient in pairs(recipe.ingredients) do
+        if ingredient.name then
+            if equivalents[ingredient.name] then
+                ingredient.name = equivalents[ingredient.name]
+            end
+        elseif equivalents[ingredient[1]] then
+            ingredient[1] = equivalents[ingredient[1]]
+        end
+    end
+end
+
+local function set_conversion(recipe, ingredient)
+    recipe.ingredients = {{ingredient, 2}}
+    recipe.category = nil
+    recipe.always_show_made_in = false
+    recipe.result_count = 2
+    recipe.energy_required = 0.5
+end
+
+local function set_results(recipe, mode)
+    for _, result in pairs(recipe[mode].results) do
         if result.name then
             result.name = recipe.name
         end
     end
+end
+
+local function expensive_mode(recipe, ingredient)
+    set_results(recipe, "expensive")
     if conversion_recipe then
---        set_conversion(recipe.expensive, original)
-        recipe.expensive.ingredients = {{ingredient, 2}}
-        recipe.expensive.category = nil
-        recipe.expensive.always_show_made_in = false
-        recipe.expensive.result_count = 2
-        recipe.expensive.energy_required = 0.5
+        set_conversion(recipe.expensive, ingredient)
+    else
+        swap_ingredient(recipe.expensive)
     end
 
     if recipe.normal then
-        for _, result in pairs(recipe.normal.results) do
-            if result.name then
-                result.name = recipe.name
-            end
-        end
+        set_results(recipe, "normal")
         if conversion_recipe then
---            set_conversion(recipe.normal, original)
-            recipe.normal.ingredients = {{ingredient, 2}}
-            recipe.normal.category = nil
-            recipe.normal.always_show_made_in = false
-            recipe.normal.result_count = 2
-            recipe.normal.energy_required = 0.5
+            set_conversion(recipe.normal, ingredient)
+        else
+            swap_ingredient(recipe.normal)
         end
     end
 end
@@ -46,12 +63,11 @@ local function clone_recipe(clone_name, original)
     clone.name = clone_name
     clone.result = clone_name
     if conversion_recipe then
---        set_conversion(clone, original)
-        clone.ingredients = {{original, 2}}
-        clone.category = nil
-        clone.always_show_made_in = false
-        clone.result_count = 2
-        clone.energy_required = 0.5
+        set_conversion(clone, original)
+    else
+        if clone.ingredients then
+            swap_ingredient(clone)
+        end
     end
     if clone.expensive then
         expensive_mode(clone, original)
