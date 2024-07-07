@@ -1,6 +1,6 @@
 local conversion_recipe = (settings.startup["bb-recipe-type"].value == "conversion")
 
-local equivalents = {
+local clones = {
     ["underground-belt"] = "braidy-belt",
     ["fast-underground-belt"] = "fast-braidy-belt",
     ["express-underground-belt"] = "express-braidy-belt",
@@ -15,12 +15,12 @@ local equivalents = {
 local function swap_ingredient(recipe)
     for _, ingredient in pairs(recipe.ingredients) do
         if ingredient.name then
-            if equivalents[ingredient.name] then
-                ingredient.name = equivalents[ingredient.name]
+            if clones[ingredient.name] then
+                ingredient.name = clones[ingredient.name]
             end
         else
-            if equivalents[ingredient[1]] then
-                ingredient[1] = equivalents[ingredient[1]]
+            if clones[ingredient[1]] then
+                ingredient[1] = clones[ingredient[1]]
             end
         end
     end
