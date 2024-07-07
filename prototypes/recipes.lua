@@ -1,4 +1,5 @@
 local conversion_recipe = (settings.startup["bb-recipe-type"].value == "conversion")
+local include_deep_space = (settings.startup["bb-deep-space"].value == true)
 
 local clones = {
     ["underground-belt"] = "braidy-belt",
@@ -9,7 +10,15 @@ local clones = {
     ["extreme-underground"] = "extreme-braidy-belt",
     ["ultimate-underground"] = "ultimate-braidy-belt",
     ["high-speed-underground"] = "high-speed-braidy-belt",
-    ["se-space-underground-belt"] = "space-braidy-belt"
+    ["se-space-underground-belt"] = "space-braidy-belt",
+    ["se-deep-space-underground-belt-black"] = "black-braidy-belt",
+    ["se-deep-space-underground-belt-white"] = "white-braidy-belt",
+    ["se-deep-space-underground-belt-red"] = "red-braidy-belt",
+    ["se-deep-space-underground-belt-magenta"] = "magenta-braidy-belt",
+    ["se-deep-space-underground-belt-blue"] = "blue-braidy-belt",
+    ["se-deep-space-underground-belt-cyan"] = "cyan-braidy-belt",
+    ["se-deep-space-underground-belt-green"] = "green-braidy-belt",
+    ["se-deep-space-underground-belt-yellow"] = "yellow-braidy-belt"
 }
 
 local function swap_ingredient(recipe)
@@ -27,6 +36,9 @@ local function swap_ingredient(recipe)
 end
 
 local function set_conversion(recipe, ingredient)
+    if ingredient == "se-deep-space-underground-belt" then
+        ingredient = ingredient.."-black"
+    end
     recipe.ingredients = {{ingredient, 2}}
     recipe.category = nil
     recipe.always_show_made_in = false
@@ -88,4 +100,36 @@ end
 if mods["space-exploration"] then
     local space_braidy_belt = clone_recipe("space-braidy-belt", "se-space-underground-belt")
     data:extend {space_braidy_belt}
+    if include_deep_space then
+        local black_braidy_belt = clone_recipe("black-braidy-belt", "se-deep-space-underground-belt")
+        data:extend {black_braidy_belt}
+        if settings.startup["se-deep-space-belt-white"].value then
+            local white_braidy_belt = clone_recipe("white-braidy-belt", "se-deep-space-underground-belt-white")
+            data:extend {white_braidy_belt}
+        end
+        if settings.startup["se-deep-space-belt-red"].value then
+            local red_braidy_belt = clone_recipe("red-braidy-belt", "se-deep-space-underground-belt-red")
+            data:extend {red_braidy_belt}
+        end
+        if settings.startup["se-deep-space-belt-magenta"].value then
+            local magenta_braidy_belt = clone_recipe("magenta-braidy-belt", "se-deep-space-underground-belt-magenta")
+            data:extend {magenta_braidy_belt}
+        end
+        if settings.startup["se-deep-space-belt-blue"].value then
+            local blue_braidy_belt = clone_recipe("blue-braidy-belt", "se-deep-space-underground-belt-blue")
+            data:extend {blue_braidy_belt}
+        end
+        if settings.startup["se-deep-space-belt-cyan"].value then
+            local cyan_braidy_belt = clone_recipe("cyan-braidy-belt", "se-deep-space-underground-belt-cyan")
+            data:extend {cyan_braidy_belt}
+        end
+        if settings.startup["se-deep-space-belt-green"].value then
+            local green_braidy_belt = clone_recipe("green-braidy-belt", "se-deep-space-underground-belt-green")
+            data:extend {green_braidy_belt}
+        end
+        if settings.startup["se-deep-space-belt-yellow"].value then
+            local yellow_braidy_belt = clone_recipe("yellow-braidy-belt", "se-deep-space-underground-belt-yellow")
+            data:extend {yellow_braidy_belt}
+        end
+    end
 end
