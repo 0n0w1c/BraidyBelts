@@ -1,5 +1,7 @@
 local mine_braidy_belt = (settings.startup["bb-mine-type"].value == "braidy belt")
-local include_deep_space = (settings.startup["bb-deep-space"].value == true)
+if mods["space-exploration"] then
+    local include_deep_space = (settings.startup["bb-deep-space"].value == true)
+end
 
 local function clone_underground_belt(clone_name, original, upgrade)
     local clone = table.deepcopy(data.raw["underground-belt"][original])

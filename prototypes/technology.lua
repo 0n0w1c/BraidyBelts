@@ -1,4 +1,6 @@
-local include_deep_space = (settings.startup["bb-deep-space"].value == true)
+if mods["space-exploration"] then
+    local include_deep_space = (settings.startup["bb-deep-space"].value == true)
+end
 
 table.insert(data.raw['technology']['logistics'].effects, {type = "unlock-recipe", recipe = "braidy-belt"})
 table.insert(data.raw['technology']['logistics-2'].effects, {type = "unlock-recipe", recipe = "fast-braidy-belt"})

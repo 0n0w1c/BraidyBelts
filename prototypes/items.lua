@@ -1,4 +1,6 @@
-local include_deep_space = (settings.startup["bb-deep-space"].value == true)
+if mods["space-exploration"] then
+    local include_deep_space = (settings.startup["bb-deep-space"].value == true)
+end
 
 local function clone_item(clone_name, original)
     local clone = table.deepcopy(data.raw["item"][original])

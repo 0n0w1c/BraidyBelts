@@ -1,5 +1,7 @@
 local conversion_recipe = (settings.startup["bb-recipe-type"].value == "conversion")
-local include_deep_space = (settings.startup["bb-deep-space"].value == true)
+if mods["space-exploration"] then
+   local include_deep_space = (settings.startup["bb-deep-space"].value == true)
+end
 
 local clones = {
     ["underground-belt"] = "braidy-belt",
