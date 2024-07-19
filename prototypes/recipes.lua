@@ -1,6 +1,7 @@
 local conversion_recipe = (settings.startup["bb-recipe-type"].value == "conversion")
+local include_deep_space = false
 if mods["space-exploration"] then
-   local include_deep_space = (settings.startup["bb-deep-space"].value == true)
+   include_deep_space = (settings.startup["bb-deep-space"].value == true)
 end
 
 local clones = {
@@ -81,6 +82,16 @@ local function clone_recipe(clone_name, original)
     return clone
 end
 
+local function add_deep_space()
+    local deep_space_belts = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
+    for _, color in pairs(deep_space_belts) do
+        if settings.startup["se-deep-space-belt-" .. color].value then
+            local recipe = clone_recipe(color .. "-braidy-belt", "se-deep-space-underground-belt-" .. color)
+            data:extend {recipe}
+        end
+    end
+end
+
 local braidy_belt = clone_recipe("braidy-belt", "underground-belt")
 local fast_braidy_belt = clone_recipe("fast-braidy-belt", "fast-underground-belt")
 local express_braidy_belt = clone_recipe("express-braidy-belt", "express-underground-belt")
@@ -102,36 +113,10 @@ end
 if mods["space-exploration"] then
     local space_braidy_belt = clone_recipe("space-braidy-belt", "se-space-underground-belt")
     data:extend {space_braidy_belt}
+
     if include_deep_space then
         local black_braidy_belt = clone_recipe("black-braidy-belt", "se-deep-space-underground-belt")
         data:extend {black_braidy_belt}
-        if settings.startup["se-deep-space-belt-white"].value then
-            local white_braidy_belt = clone_recipe("white-braidy-belt", "se-deep-space-underground-belt-white")
-            data:extend {white_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-red"].value then
-            local red_braidy_belt = clone_recipe("red-braidy-belt", "se-deep-space-underground-belt-red")
-            data:extend {red_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-magenta"].value then
-            local magenta_braidy_belt = clone_recipe("magenta-braidy-belt", "se-deep-space-underground-belt-magenta")
-            data:extend {magenta_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-blue"].value then
-            local blue_braidy_belt = clone_recipe("blue-braidy-belt", "se-deep-space-underground-belt-blue")
-            data:extend {blue_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-cyan"].value then
-            local cyan_braidy_belt = clone_recipe("cyan-braidy-belt", "se-deep-space-underground-belt-cyan")
-            data:extend {cyan_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-green"].value then
-            local green_braidy_belt = clone_recipe("green-braidy-belt", "se-deep-space-underground-belt-green")
-            data:extend {green_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-yellow"].value then
-            local yellow_braidy_belt = clone_recipe("yellow-braidy-belt", "se-deep-space-underground-belt-yellow")
-            data:extend {yellow_braidy_belt}
-        end
+        add_deep_space()
     end
 end
