@@ -1,11 +1,12 @@
-local include_deep_space = false
+local deep_space_colors = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
+local deep_space_selected = false
+
 if mods["space-exploration"] then
-    include_deep_space = (settings.startup["bb-deep-space"].value == true)
+    deep_space_selected = (settings.startup["bb-deep-space"].value == true)
 end
 
-local function add_deep_space()
-    local deep_space_belts = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
-    for _, color in pairs(deep_space_belts) do
+local function insert_selected_deep_space()
+    for _, color in pairs(deep_space_colors) do
         if settings.startup["se-deep-space-belt-" .. color].value then
             table.insert(data.raw["technology"]["se-deep-space-transport-belt"].effects, {type = "unlock-recipe", recipe = color .. "-braidy-belt"})
         end
@@ -29,8 +30,8 @@ end
 
 if mods["space-exploration"] then
     table.insert(data.raw["technology"]["se-space-belt"].effects, {type = "unlock-recipe", recipe = "space-braidy-belt"})
-    if include_deep_space then
+    if deep_space_selected then
         table.insert(data.raw["technology"]["se-deep-space-transport-belt"].effects, {type = "unlock-recipe", recipe = "black-braidy-belt"})
-        add_deep_space()
+        insert_selected_deep_space()
     end
 end

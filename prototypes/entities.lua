@@ -1,8 +1,9 @@
 local mine_braidy_belt = (settings.startup["bb-mine-type"].value == "braidy belt")
-local include_deep_space = false
+local deep_space_colors = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
+local deep_space_selected = false
 
 if mods["space-exploration"] then
-    include_deep_space = (settings.startup["bb-deep-space"].value == true)
+    deep_space_selected = (settings.startup["bb-deep-space"].value == true)
 end
 
 local function clone_underground_belt(clone_name, original, upgrade)
@@ -17,12 +18,11 @@ local function clone_underground_belt(clone_name, original, upgrade)
     return clone
 end
 
-local function add_deep_space()
-    local deep_space_belts = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
-    for _, color in pairs(deep_space_belts) do
+local function clone_selected_deep_space()
+    for _, color in pairs(deep_space_colors) do
         if settings.startup["se-deep-space-belt-" .. color].value then
-            local entity = clone_underground_belt(color .. "-braidy-belt", "se-deep-space-underground-belt-" .. color, nil)
-            data:extend {entity}
+            local clone = clone_underground_belt(color .. "-braidy-belt", "se-deep-space-underground-belt-" .. color, nil)
+            data:extend {clone}
         end
     end
 end
@@ -50,9 +50,9 @@ end
 if mods["space-exploration"] then
     local space_braidy_belt = clone_underground_belt("space-braidy-belt", "se-space-underground-belt", nil)
     data:extend {space_braidy_belt}
-    if include_deep_space then
+    if deep_space_selected then
         local black_braidy_belt = clone_underground_belt("black-braidy-belt", "se-deep-space-underground-belt-black", nil)
         data:extend {black_braidy_belt}
-        add_deep_space()
+        clone_selected_deep_space()
     end
 end

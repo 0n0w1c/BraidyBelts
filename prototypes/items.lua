@@ -1,6 +1,7 @@
-local include_deep_space = false
+local deep_space_colors = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
+local deep_space_selected = false
 if mods["space-exploration"] then
-    include_deep_space = (settings.startup["bb-deep-space"].value == true)
+    deep_space_selected = (settings.startup["bb-deep-space"].value == true)
 end
 
 local function clone_item(clone_name, original)
@@ -11,12 +12,11 @@ local function clone_item(clone_name, original)
     return clone
 end
 
-local function add_deep_space()
-    local deep_space_belts = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
-    for _, color in pairs(deep_space_belts) do
+local function clone_selected_deep_space()
+    for _, color in pairs(deep_space_colors) do
         if settings.startup["se-deep-space-belt-" .. color].value then
-            local item = clone_item(color .. "-braidy-belt", "se-deep-space-underground-belt-" .. color)
-            data:extend {item}
+            local clone = clone_item(color .. "-braidy-belt", "se-deep-space-underground-belt-" .. color)
+            data:extend {clone}
         end
     end
 end
@@ -42,9 +42,9 @@ end
 if mods["space-exploration"] then
     local space_braidy_belt = clone_item("space-braidy-belt", "se-space-underground-belt")
     data:extend {space_braidy_belt}
-    if include_deep_space then
+    if deep_space_selected then
         local black_braidy_belt = clone_item("black-braidy-belt", "se-deep-space-underground-belt-black")
         data:extend {black_braidy_belt}
-        add_deep_space()
+        clone_selected_deep_space()
     end
 end
