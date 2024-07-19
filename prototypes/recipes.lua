@@ -1,32 +1,3 @@
-local deep_space_colors = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
-local deep_space_selected = false
-
-if mods["space-exploration"] then
-    deep_space_selected = (settings.startup["bb-deep-space"].value == true)
-end
-
-local conversion_recipe = (settings.startup["bb-recipe-type"].value == "conversion")
-
-local clones = {
-    ["underground-belt"] = "braidy-belt",
-    ["fast-underground-belt"] = "fast-braidy-belt",
-    ["express-underground-belt"] = "express-braidy-belt",
-    ["kr-advanced-underground-belt"] = "advanced-braidy-belt",
-    ["kr-superior-underground-belt"] = "superior-braidy-belt",
-    ["extreme-underground"] = "extreme-braidy-belt",
-    ["ultimate-underground"] = "ultimate-braidy-belt",
-    ["high-speed-underground"] = "high-speed-braidy-belt",
-    ["se-space-underground-belt"] = "space-braidy-belt",
-    ["se-deep-space-underground-belt-black"] = "black-braidy-belt",
-    ["se-deep-space-underground-belt-white"] = "white-braidy-belt",
-    ["se-deep-space-underground-belt-red"] = "red-braidy-belt",
-    ["se-deep-space-underground-belt-magenta"] = "magenta-braidy-belt",
-    ["se-deep-space-underground-belt-blue"] = "blue-braidy-belt",
-    ["se-deep-space-underground-belt-cyan"] = "cyan-braidy-belt",
-    ["se-deep-space-underground-belt-green"] = "green-braidy-belt",
-    ["se-deep-space-underground-belt-yellow"] = "yellow-braidy-belt"
-}
-
 local function swap_ingredient(recipe)
     for _, ingredient in pairs(recipe.ingredients) do
         if ingredient.name then

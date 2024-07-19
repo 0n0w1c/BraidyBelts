@@ -1,10 +1,3 @@
-local deep_space_colors = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
-local deep_space_selected = false
-
-if mods["space-exploration"] then
-    deep_space_selected = (settings.startup["bb-deep-space"].value == true)
-end
-
 local function clone_item(clone_name, original)
     local clone = table.deepcopy(data.raw["item"][original])
     clone.name = clone_name

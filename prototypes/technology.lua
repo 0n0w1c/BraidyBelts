@@ -1,10 +1,3 @@
-local deep_space_colors = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
-local deep_space_selected = false
-
-if mods["space-exploration"] then
-    deep_space_selected = (settings.startup["bb-deep-space"].value == true)
-end
-
 local function insert_selected_deep_space()
     for _, color in pairs(deep_space_colors) do
         if settings.startup["se-deep-space-belt-" .. color].value then

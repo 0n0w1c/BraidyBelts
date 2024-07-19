@@ -1,12 +1,3 @@
-local deep_space_colors = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
-local deep_space_selected = false
-
-if mods["space-exploration"] then
-    deep_space_selected = (settings.startup["bb-deep-space"].value == true)
-end
-
-local mine_braidy_belt = (settings.startup["bb-mine-type"].value == "braidy belt")
-
 local function clone_underground_belt(clone_name, original, upgrade)
     local clone = table.deepcopy(data.raw["underground-belt"][original])
     clone.name = clone_name
