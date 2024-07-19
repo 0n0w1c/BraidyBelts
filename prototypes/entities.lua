@@ -53,37 +53,6 @@ if mods["space-exploration"] then
     if include_deep_space then
         local black_braidy_belt = clone_underground_belt("black-braidy-belt", "se-deep-space-underground-belt-black", nil)
         data:extend {black_braidy_belt}
-
         add_deep_space()
---[[
-        if settings.startup["se-deep-space-belt-white"].value then
-            local white_braidy_belt = clone_underground_belt("white-braidy-belt", "se-deep-space-underground-belt-white", nil)
-            data:extend {white_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-red"].value then
-            local red_braidy_belt = clone_underground_belt("red-braidy-belt", "se-deep-space-underground-belt-red", nil)
-            data:extend {red_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-magenta"].value then
-            local magenta_braidy_belt = clone_underground_belt("magenta-braidy-belt", "se-deep-space-underground-belt-magenta", nil)
-            data:extend {magenta_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-blue"].value then
-            local blue_braidy_belt = clone_underground_belt("blue-braidy-belt", "se-deep-space-underground-belt-blue", nil)
-            data:extend {blue_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-cyan"].value then
-            local cyan_braidy_belt = clone_underground_belt("cyan-braidy-belt", "se-deep-space-underground-belt-cyan", nil)
-            data:extend {cyan_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-green"].value then
-            local green_braidy_belt = clone_underground_belt("green-braidy-belt", "se-deep-space-underground-belt-green", nil)
-            data:extend {green_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-yellow"].value then
-            local yellow_braidy_belt = clone_underground_belt("yellow-braidy-belt", "se-deep-space-underground-belt-yellow", nil)
-            data:extend {yellow_braidy_belt}
-        end
-]]
     end
 end

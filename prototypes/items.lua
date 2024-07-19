@@ -45,37 +45,6 @@ if mods["space-exploration"] then
     if include_deep_space then
         local black_braidy_belt = clone_item("black-braidy-belt", "se-deep-space-underground-belt-black")
         data:extend {black_braidy_belt}
-
         add_deep_space()
---[[
-        if settings.startup["se-deep-space-belt-white"].value then
-            local white_braidy_belt = clone_item("white-braidy-belt", "se-deep-space-underground-belt-white")
-            data:extend {white_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-red"].value then
-            local red_braidy_belt = clone_item("red-braidy-belt", "se-deep-space-underground-belt-red")
-            data:extend {red_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-magenta"].value then
-            local magenta_braidy_belt = clone_item("magenta-braidy-belt", "se-deep-space-underground-belt-magenta")
-            data:extend {magenta_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-blue"].value then
-            local blue_braidy_belt = clone_item("blue-braidy-belt", "se-deep-space-underground-belt-blue")
-            data:extend {blue_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-cyan"].value then
-            local cyan_braidy_belt = clone_item("cyan-braidy-belt", "se-deep-space-underground-belt-cyan")
-            data:extend {cyan_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-green"].value then
-            local green_braidy_belt = clone_item("green-braidy-belt", "se-deep-space-underground-belt-green")
-            data:extend {green_braidy_belt}
-        end
-        if settings.startup["se-deep-space-belt-yellow"].value then
-            local yellow_braidy_belt = clone_item("yellow-braidy-belt", "se-deep-space-underground-belt-yellow")
-            data:extend {yellow_braidy_belt}
-        end
-]]
     end
 end
