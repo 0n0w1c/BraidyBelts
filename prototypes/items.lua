@@ -1,5 +1,6 @@
 local deep_space_colors = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
 local deep_space_selected = false
+
 if mods["space-exploration"] then
     deep_space_selected = (settings.startup["bb-deep-space"].value == true)
 end

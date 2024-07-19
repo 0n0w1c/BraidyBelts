@@ -1,10 +1,11 @@
-local conversion_recipe = (settings.startup["bb-recipe-type"].value == "conversion")
 local deep_space_colors = {"white", "red", "magenta", "blue", "cyan", "green", "yellow"}
 local deep_space_selected = false
 
 if mods["space-exploration"] then
-   deep_space_selected = (settings.startup["bb-deep-space"].value == true)
+    deep_space_selected = (settings.startup["bb-deep-space"].value == true)
 end
+
+local conversion_recipe = (settings.startup["bb-recipe-type"].value == "conversion")
 
 local clones = {
     ["underground-belt"] = "braidy-belt",
