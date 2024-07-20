@@ -37,28 +37,30 @@ for index, force in pairs(game.forces) do
     if recipes["space-braidy-belt"] and technologies["se-space-belt"] then
         recipes["space-braidy-belt"].enabled = technologies["se-space-belt"].researched
     end
-    if recipes["black-braidy-belt"] and technologies["se-deep-space-transport-belt"] then
-        recipes["black-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
-    end
-    if recipes["white-braidy-belt"] and technologies["se-deep-space-transport-belt"] then
-        recipes["white-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
-    end
-    if recipes["red-braidy-belt"] and technologies["se-deep-space-transport-belt"] then
-        recipes["red-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
-    end
-    if recipes["magenta-braidy-belt"] and technologies["se-deep-space-transport-belt"] then
-        recipes["magenta-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
-    end
-    if recipes["blue-braidy-belt"] and technologies["se-deep-space-transport-belt"] then
-        recipes["blue-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
-    end
-    if recipes["cyan-braidy-belt"] and technologies["se-deep-space-transport-belt"] then
-        recipes["cyan-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
-    end
-    if recipes["green-braidy-belt"] and technologies["se-deep-space-transport-belt"] then
-        recipes["green-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
-    end
-    if recipes["yellow-braidy-belt"] and technologies["se-deep-space-transport-belt"] then
-        recipes["yellow-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
+    if technologies["se-deep-space-transport-belt"] then
+        if recipes["black-braidy-belt"] then
+            recipes["black-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
+        end
+        if recipes["white-braidy-belt"] then
+            recipes["white-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
+        end
+        if recipes["red-braidy-belt"] then
+            recipes["red-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
+        end
+        if recipes["magenta-braidy-belt"] then
+            recipes["magenta-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
+        end
+        if recipes["blue-braidy-belt"] then
+            recipes["blue-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
+        end
+        if recipes["cyan-braidy-belt"] then
+            recipes["cyan-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
+        end
+        if recipes["green-braidy-belt"] then
+            recipes["green-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
+        end
+        if recipes["yellow-braidy-belt"] then
+            recipes["yellow-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
+        end
     end
 end

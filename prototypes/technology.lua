@@ -25,6 +25,7 @@ if mods["space-exploration"] then
     table.insert(data.raw["technology"]["se-space-belt"].effects, {type = "unlock-recipe", recipe = "space-braidy-belt"})
     if deep_space_selected then
         table.insert(data.raw["technology"]["se-deep-space-transport-belt"].effects, {type = "unlock-recipe", recipe = "black-braidy-belt"})
+
         insert_selected_deep_space()
     end
 end

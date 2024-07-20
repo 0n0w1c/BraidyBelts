@@ -4,7 +4,7 @@ mine_braidy_belt = (settings.startup["bb-mine-type"].value == "braidy belt")
 
 deep_space_selected = false
 if mods["space-exploration"] then
-    deep_space_selected = (settings.startup["bb-deep-space"].value == true)
+    deep_space_selected = settings.startup["bb-deep-space"].value
 end
 
 clones = {

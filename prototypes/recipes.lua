@@ -41,17 +41,19 @@ end
 
 local function clone_recipe(clone_name, original)
     local clone = table.deepcopy(data.raw["recipe"][original])
-    clone.name = clone_name
-    if clone.expensive then
-        set_recipe(clone.expensive, original)
-        set_result(clone.expensive, clone_name)
-        if clone.normal then
-            set_recipe(clone.normal, original)
-            set_result(clone.normal, clone_name)
+    if clone then
+        clone.name = clone_name
+        if clone.expensive then
+            set_recipe(clone.expensive, original)
+            set_result(clone.expensive, clone_name)
+            if clone.normal then
+                set_recipe(clone.normal, original)
+                set_result(clone.normal, clone_name)
+            end
+        else
+            set_recipe(clone, original)
+            clone.result = clone_name
         end
-    else
-        set_recipe(clone, original)
-        clone.result = clone_name
     end
     return clone
 end
@@ -60,7 +62,9 @@ local function clone_selected_deep_space()
     for _, color in pairs(deep_space_colors) do
         if settings.startup["se-deep-space-belt-" .. color].value then
             local clone = clone_recipe(color .. "-braidy-belt", "se-deep-space-underground-belt-" .. color)
-            data:extend {clone}
+            if clone then
+                data:extend {clone}
+            end
         end
     end
 end
@@ -68,28 +72,39 @@ end
 local braidy_belt = clone_recipe("braidy-belt", "underground-belt")
 local fast_braidy_belt = clone_recipe("fast-braidy-belt", "fast-underground-belt")
 local express_braidy_belt = clone_recipe("express-braidy-belt", "express-underground-belt")
-data:extend {braidy_belt, fast_braidy_belt, express_braidy_belt}
+if braidy_belt and fast_braidy_belt and express_braidy_belt then
+    data:extend {braidy_belt, fast_braidy_belt, express_braidy_belt}
+end
 
 if mods["Krastorio2"] then
     local advanced_braidy_belt = clone_recipe("advanced-braidy-belt", "kr-advanced-underground-belt")
     local superior_braidy_belt = clone_recipe("superior-braidy-belt", "kr-superior-underground-belt")
-    data:extend {advanced_braidy_belt, superior_braidy_belt}
+    if advanced_braidy_belt and superior_braidy_belt then
+        data:extend {advanced_braidy_belt, superior_braidy_belt}
+    end
 end
 
 if mods["AdvancedBelts"] then
     local extreme_braidy_belt = clone_recipe("extreme-braidy-belt", "extreme-underground")
     local ultimate_braidy_belt = clone_recipe("ultimate-braidy-belt", "ultimate-underground")
     local high_speed_braidy_belt = clone_recipe("high-speed-braidy-belt", "high-speed-underground")
-    data:extend {extreme_braidy_belt, ultimate_braidy_belt, high_speed_braidy_belt}
+    if extreme_braidy_belt and ultimate_braidy_belt and high_speed_braidy_belt then
+        data:extend {extreme_braidy_belt, ultimate_braidy_belt, high_speed_braidy_belt}
+    end
 end
 
 if mods["space-exploration"] then
     local space_braidy_belt = clone_recipe("space-braidy-belt", "se-space-underground-belt")
-    data:extend {space_braidy_belt}
+    if space_braidy_belt then
+        data:extend {space_braidy_belt}
+    end
 
     if deep_space_selected then
         local black_braidy_belt = clone_recipe("black-braidy-belt", "se-deep-space-underground-belt")
-        data:extend {black_braidy_belt}
+        if black_braidy_belt then
+            data:extend {black_braidy_belt}
+        end
+
         clone_selected_deep_space()
     end
 end
