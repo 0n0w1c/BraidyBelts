@@ -12,8 +12,8 @@ Startup setting to select the recipe type: vanilla or conversion (default is van
 Vanilla recipe or direct conversion of underground belts to braidy belts.  
 
 Startup setting to select the belt type, to be returned to inventory, when mined (default is braidy belt).  
-Vanilla/modded mine type can be a nice option with the conversion recipe type.  
-To the contrary, selecting vanilla/modded mine type with vanilla recipe, is probably not a favorable combination.  
+The vanilla/modded mine type can be a nice option with the conversion recipe.  
+To the contrary, selecting the mine type of vanilla/modded with the recipe type of vanilla, is probably not a favorable combination.  
 
 Startup setting to enable Space Exploration deep space braidy belts (default is disabled).  
 This setting is only available when Space Exploration is active.  
