@@ -31,20 +31,20 @@ if braidy_belt and fast_braidy_belt and express_braidy_belt then
 end
 
 if mods["Krastorio2"] then
-    data.raw["underground-belt"]["express-braidy-belt"].next_upgrade = "advanced-braidy-belt"
     local advanced_braidy_belt = clone_underground_belt("advanced-braidy-belt", "kr-advanced-underground-belt", "superior-braidy-belt")
     local superior_braidy_belt = clone_underground_belt("superior-braidy-belt", "kr-superior-underground-belt", nil)
     if advanced_braidy_belt and superior_braidy_belt then
+        data.raw["underground-belt"]["express-braidy-belt"].next_upgrade = "advanced-braidy-belt"
         data:extend {advanced_braidy_belt, superior_braidy_belt}
     end
 end
 
 if mods["AdvancedBelts"] then
-    data.raw["underground-belt"]["express-braidy-belt"].next_upgrade = "extreme-braidy-belt"
     local extreme_braidy_belt = clone_underground_belt("extreme-braidy-belt", "extreme-underground", "ultimate-braidy-belt")
     local ultimate_braidy_belt = clone_underground_belt("ultimate-braidy-belt", "ultimate-underground", "high-speed-braidy-belt")
     local high_speed_braidy_belt = clone_underground_belt("high-speed-braidy-belt", "high-speed-underground", nil)
     if extreme_braidy_belt and ultimate_braidy_belt and high_speed_braidy_belt then
+        data.raw["underground-belt"]["express-braidy-belt"].next_upgrade = "extreme-braidy-belt"
         data:extend {extreme_braidy_belt, ultimate_braidy_belt, high_speed_braidy_belt}
     end
 end
