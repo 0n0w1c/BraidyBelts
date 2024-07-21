@@ -24,7 +24,10 @@ clones = {
     ["se-deep-space-underground-belt-blue"] = "blue-braidy-belt",
     ["se-deep-space-underground-belt-cyan"] = "cyan-braidy-belt",
     ["se-deep-space-underground-belt-green"] = "green-braidy-belt",
-    ["se-deep-space-underground-belt-yellow"] = "yellow-braidy-belt"
+    ["se-deep-space-underground-belt-yellow"] = "yellow-braidy-belt",
+    ["fl:faster-underground-belt"] = "fl:faster-braidy-belt",
+    ["fl:faster-fast-underground-belt"] = "fl:faster-fast-braidy-belt",
+    ["fl:faster-express-underground-belt"] = "fl:faster-express-braidy-belt"
 }
 
 require("prototypes.entities")

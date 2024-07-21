@@ -108,3 +108,12 @@ if mods["space-exploration"] then
         clone_selected_deep_space()
     end
 end
+
+if mods["FastLogistics"] then
+    local fl_faster_braidy_belt = clone_recipe("fl:faster-braidy-belt", "fl:faster-underground-belt")
+    local fl_faster_fast_braidy_belt = clone_recipe("fl:faster-fast-braidy-belt", "fl:faster-fast-underground-belt")
+    local fl_faster_express_braidy_belt = clone_recipe("fl:faster-express-braidy-belt", "fl:faster-express-underground-belt")
+    if fl_faster_braidy_belt and fl_faster_fast_braidy_belt and fl_faster_express_braidy_belt then
+        data:extend {fl_faster_braidy_belt, fl_faster_fast_braidy_belt, fl_faster_express_braidy_belt}
+    end
+end

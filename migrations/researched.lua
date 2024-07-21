@@ -63,4 +63,15 @@ for index, force in pairs(game.forces) do
             recipes["yellow-braidy-belt"].enabled = technologies["se-deep-space-transport-belt"].researched
         end
     end
+
+    -- FastLogistics
+    if recipes["fl:faster-braidy-belt"] and technologies["fl:faster-logistics"] then
+        recipes["fl:faster-braidy-belt"].enabled = technologies["fl:faster-logistics"].researched
+    end
+    if recipes["fl:faster-fast-braidy-belt"] and technologies["fl:faster-logistics-2"] then
+        recipes["fl:faster-fast-braidy-belt"].enabled = technologies["fl:faster-logistics-2"].researched
+    end
+    if recipes["fl:faster-express-braidy-belt"] and technologies["fl:faster-logistics-3"] then
+        recipes["fl:faster-express-braidy-belt"].enabled = technologies["fl:faster-logistics-3"].researched
+    end
 end

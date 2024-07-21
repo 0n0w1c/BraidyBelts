@@ -29,3 +29,9 @@ if mods["space-exploration"] then
         insert_selected_deep_space()
     end
 end
+
+if mods["FastLogistics"] then
+    table.insert(data.raw['technology']['fl:faster-logistics'].effects, {type = "unlock-recipe", recipe = "fl:faster-braidy-belt"})
+    table.insert(data.raw['technology']['fl:faster-logistics-2'].effects, {type = "unlock-recipe", recipe = "fl:faster-fast-braidy-belt"})
+    table.insert(data.raw['technology']['fl:faster-logistics-3'].effects, {type = "unlock-recipe", recipe = "fl:faster-express-braidy-belt"})
+end
