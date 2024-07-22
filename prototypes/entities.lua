@@ -66,8 +66,8 @@ if mods["space-exploration"] then
 end
 
 if mods["FastLogistics"] then
-    local fl_faster_braidy_belt = clone_underground_belt("fl:faster-braidy-belt", "fl:faster-underground-belt", nil)
-    local fl_faster_fast_braidy_belt = clone_underground_belt("fl:faster-fast-braidy-belt", "fl:faster-fast-underground-belt", nil)
+    local fl_faster_braidy_belt = clone_underground_belt("fl:faster-braidy-belt", "fl:faster-underground-belt", "fl:faster-fast-braidy-belt")
+    local fl_faster_fast_braidy_belt = clone_underground_belt("fl:faster-fast-braidy-belt", "fl:faster-fast-underground-belt", "fl:faster-express-braidy-belt")
     local fl_faster_express_braidy_belt = clone_underground_belt("fl:faster-express-braidy-belt", "fl:faster-express-underground-belt", nil)
     if fl_faster_braidy_belt and fl_faster_fast_braidy_belt and fl_faster_express_braidy_belt then
         data:extend {fl_faster_braidy_belt, fl_faster_fast_braidy_belt, fl_faster_express_braidy_belt}
