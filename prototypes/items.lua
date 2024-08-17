@@ -66,3 +66,14 @@ if mods["FastLogistics"] then
         data:extend {fl_faster_braidy_belt, fl_faster_fast_braidy_belt, fl_faster_express_braidy_belt}
     end
 end
+
+if mods["UltimateBelts"] then
+    local ultra_fast_braidy_belt = clone_item("ultra-fast-braidy-belt", "ultra-fast-underground-belt")
+    local extreme_fast_braidy_belt = clone_item("extreme-fast-braidy-belt", "extreme-fast-underground-belt")
+    local ultra_express_braidy_belt = clone_item("ultra-express-braidy-belt", "ultra-express-underground-belt")
+    local extreme_express_braidy_belt = clone_item("extreme-express-braidy-belt", "extreme-express-underground-belt")
+    local original_ultimate_braidy_belt = clone_item("original-ultimate-braidy-belt", "original-ultimate-underground-belt")
+    if ultra_fast_braidy_belt and extreme_fast_braidy_belt and ultra_express_braidy_belt and extreme_express_braidy_belt and original_ultimate_braidy_belt then
+        data:extend {ultra_fast_braidy_belt, extreme_fast_braidy_belt, ultra_express_braidy_belt, extreme_express_braidy_belt, original_ultimate_braidy_belt}
+    end
+end

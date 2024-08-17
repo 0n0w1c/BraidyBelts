@@ -27,7 +27,12 @@ clones = {
     ["se-deep-space-underground-belt-yellow"] = "yellow-braidy-belt",
     ["fl:faster-underground-belt"] = "fl:faster-braidy-belt",
     ["fl:faster-fast-underground-belt"] = "fl:faster-fast-braidy-belt",
-    ["fl:faster-express-underground-belt"] = "fl:faster-express-braidy-belt"
+    ["fl:faster-express-underground-belt"] = "fl:faster-express-braidy-belt",
+    ["ultra-fast-underground-belt"] = "ultra-fast-braidy-belt",
+    ["extreme-fast-underground-belt"] = "extreme-fast-braidy-belt",
+    ["ultra-express-underground-belt"] = "ultra-express-braidy-belt",
+    ["extreme-express-underground-belt"] = "extreme-express-braidy-belt",
+    ["original-ultimate-underground-belt"] = "original-ultimate-braidy-belt",
 }
 
 require("prototypes.entities")

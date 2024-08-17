@@ -21,6 +21,7 @@ This setting is only available when Space Exploration is active.
 #### Support for:  
 
 [Advanced Belts](https://mods.factorio.com/mod/AdvancedBelts)  
+[Fast Logistics](https://mods.factorio.com/mod/FastLogistics)  
 [Krastorio 2](https://mods.factorio.com/mod/Krastorio2)  
 [Space Exploration](https://mods.factorio.com/mod/space-exploration)  
-[Fast Logistics](https://mods.factorio.com/mod/FastLogistics)  
+[Ultimate Belts](https://mods.factorio.com/mod/UltimateBelts)  

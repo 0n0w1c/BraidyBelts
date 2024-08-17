@@ -73,3 +73,15 @@ if mods["FastLogistics"] then
         data:extend {fl_faster_braidy_belt, fl_faster_fast_braidy_belt, fl_faster_express_braidy_belt}
     end
 end
+
+if mods["UltimateBelts"] then
+    local ultra_fast_braidy_belt = clone_underground_belt("ultra-fast-braidy-belt", "ultra-fast-underground-belt", "extreme-fast-braidy-belt")
+    local extreme_fast_braidy_belt = clone_underground_belt("extreme-fast-braidy-belt", "extreme-fast-underground-belt", "ultra-express-braidy-belt")
+    local ultra_express_braidy_belt = clone_underground_belt("ultra-express-braidy-belt", "ultra-express-underground-belt", "extreme-express-braidy-belt")
+    local extreme_express_braidy_belt = clone_underground_belt("extreme-express-braidy-belt", "extreme-express-underground-belt", "original-ultimate-braidy-belt")
+    local original_ultimate_braidy_belt = clone_underground_belt("original-ultimate-braidy-belt", "original-ultimate-underground-belt", nil)
+    if ultra_fast_braidy_belt and extreme_fast_braidy_belt and ultra_express_braidy_belt and extreme_express_braidy_belt and original_ultimate_braidy_belt then
+        data.raw["underground-belt"]["express-braidy-belt"].next_upgrade = "ultra-fast-braidy-belt"
+        data:extend {ultra_fast_braidy_belt, extreme_fast_braidy_belt, ultra_express_braidy_belt, extreme_express_braidy_belt, original_ultimate_braidy_belt}
+    end
+end

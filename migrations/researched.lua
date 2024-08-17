@@ -74,4 +74,21 @@ for index, force in pairs(game.forces) do
     if recipes["fl:faster-express-braidy-belt"] and technologies["fl:faster-logistics-3"] then
         recipes["fl:faster-express-braidy-belt"].enabled = technologies["fl:faster-logistics-3"].researched
     end
+
+    -- UltimateBelts
+    if recipes["ultra-fast-braidy-belt"] and technologies["ultra-fast-logistics"] then
+        recipes["ultra-fast-braidy-belt"].enabled = technologies["ultra-fast-logistics"].researched
+    end
+    if recipes["extreme-fast-braidy-belt"] and technologies["extreme-fast-logistics"] then
+        recipes["extreme-fast-braidy-belt"].enabled = technologies["extreme-fast-logistics"].researched
+    end
+    if recipes["ultra-express-braidy-belt"] and technologies["ultra-express-logistics"] then
+        recipes["ultra-express-braidy-belt"].enabled = technologies["ultra-express-logistics"].researched
+    end
+    if recipes["extreme-express-braidy-belt"] and technologies["extreme-express-logistics"] then
+        recipes["extreme-express-braidy-belt"].enabled = technologies["extreme-express-logistics"].researched
+    end
+    if recipes["original-ultimate-braidy-belt"] and technologies["ultimate-logistics"] then
+        recipes["original-ultimate-braidy-belt"].enabled = technologies["ultimate-logistics"].researched
+    end
 end

@@ -35,3 +35,11 @@ if mods["FastLogistics"] then
     table.insert(data.raw['technology']['fl:faster-logistics-2'].effects, {type = "unlock-recipe", recipe = "fl:faster-fast-braidy-belt"})
     table.insert(data.raw['technology']['fl:faster-logistics-3'].effects, {type = "unlock-recipe", recipe = "fl:faster-express-braidy-belt"})
 end
+
+if mods["UltimateBelts"] then
+    table.insert(data.raw['technology']['ultra-fast-logistics'].effects, {type = "unlock-recipe", recipe = "ultra-fast-braidy-belt"})
+    table.insert(data.raw['technology']['extreme-fast-logistics'].effects, {type = "unlock-recipe", recipe = "extreme-fast-braidy-belt"})
+    table.insert(data.raw['technology']['ultra-express-logistics'].effects, {type = "unlock-recipe", recipe = "ultra-express-braidy-belt"})
+    table.insert(data.raw['technology']['extreme-express-logistics'].effects, {type = "unlock-recipe", recipe = "extreme-express-braidy-belt"})
+    table.insert(data.raw['technology']['ultimate-logistics'].effects, {type = "unlock-recipe", recipe = "original-ultimate-braidy-belt"})
+end
